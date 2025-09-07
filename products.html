@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order - TastyBite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="order">
+
+<!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>TastyBite</h2>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="products.html" class="nav-link active">Products</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<header class="page-header">
+  <div class="header-content">
+    <h1>
+      <b><u>Our Products</u></b>
+    </h1>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Cart (<span id="cartCounter">0</span>)
+    </button>
+  </div>
+</header>
+
+<!-- Filter Buttons -->
+<div class="filter-buttons">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="pastry">Pastries</button>
+  <button class="filter-btn" data-category="cookie">Cookies</button>
+  <button class="filter-btn" data-category="cake">Cakes</button>
+  <button class="filter-btn" data-category="bread">Breads</button>
+</div>
+
+<div class="menu">
+  <!-- Sample menu items -->
+
+  <div class="menu-item" data-category="pastry">
+    <img src="images/Chocolate almond croissant.jpg" alt="Chocolate Almond Croissant">
+    <h3>Chocolate Almond Croissant</h3>
+    <p class="price">$4.49</p>
+    <button class="addtocart-btn" onclick="addToCart('choc-almond-croissant', 'Chocolate Almond Croissant', 4.49)" data-item="choc-almond-croissant">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cookie">
+    <img src="images/chocolate chip cookie.jpg" alt="Chocolate Chip Cookie">
+    <h3>Chocolate Chip Cookie</h3>
+    <p class="price">$2.49</p>
+    <button class="addtocart-btn" onclick="addToCart('choc-chip-cookie', 'Chocolate Chip Cookie', 2.49)" data-item="choc-chip-cookie">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="pastry">
+    <img src="images/cinnamon roll .jpg" alt="Cinnamon Roll">
+    <h3>Cinnamon Roll</h3>
+    <p class="price">$4.29</p>
+    <button class="addtocart-btn" onclick="addToCart('cinnamon-roll', 'Cinnamon Roll', 4.29)" data-item="cinnamon-roll">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cake">
+    <img src="images/red velvet cake.jpg" alt="Red Velvet Cake">
+    <h3>Red Velvet Cake</h3>
+    <p class="price">$39.99</p>
+    <button class="addtocart-btn" onclick="addToCart('red-velvet', 'Red Velvet Cake Slice', 39.99)" data-item="red-velvet">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="pastry">
+    <img src="images/pain au chocolat.jpg" alt="Pain au Chocolat">
+    <h3>Pain au Chocolat</h3>
+    <p class="price">$3.99</p>
+    <button class="addtocart-btn" onclick="addToCart('pain-au-chocolat', 'Pain au Chocolat', 3.99)" data-item="pain-au-chocolat">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cake">
+    <img src="images/Raspberry tart.jpg" alt="Raspberry Tart">
+    <h3>Raspberry Tart</h3>
+    <p class="price">$4.49</p>
+    <button class="addtocart-btn" onclick="addToCart('rasp-tart', 'Raspberry Tart', 4.49)" data-item="rasp-tart">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cookie">
+    <img src="images/blondie bar.jpg" alt="Blondie Bar">
+    <h3>Blondie Bar</h3>
+    <p class="price">$3.49</p>
+    <button class="addtocart-btn" onclick="addToCart('blondie-bar', 'Blondie Bar', 3.49)" data-item="blondie-bar">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cake">
+    <img src="images/pumpkin pie.jpg" alt="Pumkin Pie">
+    <h3>Pumpkin Pie</h3>
+    <p class="price">$19.99</p>
+    <button class="addtocart-btn" onclick="addToCart('pumpkin-pie', 'Pumpkin Pie', 9.99)" data-item="pumpkin-pie">Add to Cart</button>
+  </div>
+  
+  <div class="menu-item" data-category="bread">
+    <img src="images/bread biscuit.jpg" alt="Bread Biscuit">
+    <h3>Bread Biscuit</h3>
+    <p class="price">$1.99</p>
+    <button class="addtocart-btn" onclick="addToCart('bread-biscuit', 'Bread Biscuit', 1.99)" data-item="bread-biscuit">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cake">
+    <img src="images/apple pie.jpg" alt="Apple Pie">
+    <h3>Apple Pie Slice</h3>
+    <p class="price">$5.49</p>
+    <button class="addtocart-btn" onclick="addToCart('apple-pie', 'Apple Pie Slice', 5.49)" data-item="apple-pie">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="pastry">
+    <img src="images/butter croissant.jpg" alt="Butter Croissant">
+    <h3>Butter Croissant</h3>
+    <p class="price">$2.99</p>
+    <button class="addtocart-btn" onclick="addToCart('butter-croissant', 'Butter Croissant', 2.99)" data-item="butter-croissant">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="bread">
+    <img src="images/sour dough bread.jpg" alt="Sour Dough Bread">
+    <h3>SourDough Bread</h3>
+    <p class="price">$4.49</p>
+    <button class="addtocart-btn" onclick="addToCart('sourdough-bread', 'SourDough Bread', 4.49)" data-item="sourdough-bread">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cookie">
+    <img src="images/oatmeal raisin cookie.jpg" alt="Oatmeal Raisin Cookie">
+    <h3>Oatmeal Raisin Cookie</h3>
+    <p class="price">$2.29</p>
+    <button class="addtocart-btn" onclick="addToCart('oatmeal-cookie', 'Oatmeal Raisin Cookie', 2.29)" data-item="oatmeal-cookie">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="cake">
+    <img src="images/lemon tart.jpg" alt="Lemon Tart">
+    <h3>Lemon Tart</h3>
+    <p class="price">$4.49</p>
+    <button class="addtocart-btn" onclick="addToCart('lemon-tart', 'Lemon Tart', 4.49)" data-item="lemon-tart">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="bread">
+    <img src="images/french baguette.jpg" alt="French baguette">
+    <h3>French baguette</h3>
+    <p class="price">$3.49</p>
+    <button class="addtocart-btn" onclick="addToCart('french-baguette', 'French baguette', 3.49)" data-item="french-baguette">Add to Cart</button>
+  </div>
+
+  <div class="menu-item" data-category="pastry">
+    <img src="images/macrons.jpg" alt="Macarons">
+    <h3>Macarons (6 pcs)</h3>
+    <p class="price">$12.99</p>
+    <button class="addtocart-btn" onclick="addToCart('macarons', 'Macarons (6 pcs)', 12.99)" data-item="macarons">Add to Cart</button>
+  </div>
+</div>
+
+
+<!-- Cart Modal -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-content">
+    <h2>Your Cart</h2>
+    <div id="cartItemsList"></div>
+    <p>Total: $<span id="cartTotal">0.00</span></p>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="toggleCart()">Close</button>
+  </div>
+</div>
+<script src="CartSystem.js"></script>
+
+<!-- Filtering Script -->
+<script>
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
+
+      // Highlight active button
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Show/Hide items
+      menuItems.forEach(item => {
+        if (category === "all" || item.getAttribute("data-category") === category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>📧 abcd@TastyBite.com</p>
+        <p>📞 +99 999 99 9999</p>
+        <p>📍 123 Bakery Street, Food City</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" class="social-link">📘 Facebook</a>
+          <a href="#" class="social-link">📷 Instagram</a>
+          <a href="#" class="social-link">🐦 Twitter</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="HomePage.html" class="footer-link">Home</a>
+        <a href="orderPage.html" class="footer-link">Products</a>
+        <a href="About Page.html" class="footer-link">About</a>
+        <a href="contactUsPage.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 TastyBite. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
